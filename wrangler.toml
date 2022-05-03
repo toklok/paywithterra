@@ -1,0 +1,25 @@
+name = "terra"
+type = "javascript"
+zone_id = ""
+account_id = ""
+route = ""
+workers_dev = true
+compatibility_date = "2022-02-05"
+
+kv_namespaces = [
+  { binding = "ORDERS", id = "5fdaa3f46bce42868a519cf4b775e2f4" }
+]
+
+[build]
+command = "pnpm install && pnpm run build"
+[build.upload]
+format = "service-worker"
+
+[vars]
+PAID_URL_WEBHOOK = "https://terra.joecurt.workers.dev/paid" 
+RETURN_URL_WEBHOOK = "https://terra.joecurt.workers.dev/thanks"
+DENOM = "uusd"
+
+# [secrets]
+# API_KEY
+# WALLERT_ADDR
